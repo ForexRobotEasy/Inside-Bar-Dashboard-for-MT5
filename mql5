@@ -1,0 +1,132 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                Inside Bar Dashboard for MT5                     |
+//|                                        forexroboteasy.com, Forex Robot Easy Team|
+//+------------------------------------------------------------------+
+
+// Declare global variables
+input string PreferredCurrencies = 'EURUSD, GBPUSD, USDJPY';
+input string PreferredTimeframes = 'M1, M5, M15';
+input color BarColor = clrRed;
+input color TextColor = clrWhite;
+input int BarSize = 5;
+
+//+------------------------------------------------------------------+
+//| Custom indicator initialization function                         |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Set preferred currencies and timeframes
+   SetPreferredCurrencies();
+   SetPreferredTimeframes();
+   
+   // Create and display the dashboard
+   CreateDashboard();
+   
+   return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Custom indicator iteration function                              |
+//+------------------------------------------------------------------+
+void OnCalculate(const int rates_total,
+                 const int prev_calculated,
+                 const datetime &time[],
+                 const double &open[],
+                 const double &high[],
+                 const double &low[],
+                 const double &close[],
+                 const long &tick_volume[],
+                 const long &volume[],
+                 const int &spread[])
+{
+   // Detect and display the last found IB and MB patterns
+   DetectInsideBarPattern();
+   DetectMotherBarPattern();
+   
+   // Calculate and display the current price position
+   CalculatePricePosition();
+   
+   // Determine and display the breakout levels
+   CalculateBreakoutLevels();
+   
+   // Check for level breakouts and send notifications
+   CheckLevelBreakouts();
+   
+   // Allow traders to open positions directly from the dashboard
+   OpenPositionsFromDashboard();
+}
+
+//+------------------------------------------------------------------+
+//| Set preferred currencies                                          |
+//+------------------------------------------------------------------+
+void SetPreferredCurrencies()
+{
+   // Logic to set preferred currencies
+}
+
+//+------------------------------------------------------------------+
+//| Set preferred timeframes                                          |
+//+------------------------------------------------------------------+
+void SetPreferredTimeframes()
+{
+   // Logic to set preferred timeframes
+}
+
+//+------------------------------------------------------------------+
+//| Create and display the dashboard                                  |
+//+------------------------------------------------------------------+
+void CreateDashboard()
+{
+   // Logic to create and display the dashboard
+}
+
+//+------------------------------------------------------------------+
+//| Detect and display the last found IB pattern                       |
+//+------------------------------------------------------------------+
+void DetectInsideBarPattern()
+{
+   // Logic to detect and display the last found IB pattern
+}
+
+//+------------------------------------------------------------------+
+//| Detect and display the last found MB pattern                       |
+//+------------------------------------------------------------------+
+void DetectMotherBarPattern()
+{
+   // Logic to detect and display the last found MB pattern
+}
+
+//+------------------------------------------------------------------+
+//| Calculate and display the current price position                   |
+//+------------------------------------------------------------------+
+void CalculatePricePosition()
+{
+   // Logic to calculate and display the current price position
+}
+
+//+------------------------------------------------------------------+
+//| Determine and display the breakout levels                          |
+//+------------------------------------------------------------------+
+void CalculateBreakoutLevels()
+{
+   // Logic to determine and display the breakout levels
+}
+
+//+------------------------------------------------------------------+
+//| Check for level breakouts and send notifications                   |
+//+------------------------------------------------------------------+
+void CheckLevelBreakouts()
+{
+   // Logic to check for level breakouts and send notifications
+}
+
+//+------------------------------------------------------------------+
+//| Allow traders to open positions directly from the dashboard        |
+//+------------------------------------------------------------------+
+void OpenPositionsFromDashboard()
+{
+   // Logic to allow traders to open positions directly from the dashboard
+}
+
+//+------------------------------------------------------------------+
